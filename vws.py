@@ -5,7 +5,6 @@ import abc
 
 
 class Menus:
-
     @abc.abstractclassmethod
     def __call__(self):
         pass
@@ -13,6 +12,7 @@ class Menus:
     @abc.abstractclassmethod
     def choose(self):
         pass
+
 
 def clear_screen():
     if os.name == "nt":
@@ -30,7 +30,7 @@ class Login:
         # def __call__(self) -> None:
         a = db.Akun(self.__nama, self.__userid, self.__pw)
         b = db.AkunPengelola(self.__nama, self.__userid, self.__pw)
-        self.c = a.checkNone(self.__userid,self.__pw)
+        self.c = a.checkNone(self.__userid, self.__pw)
         self.d = b.checkNone(self.__userid, self.__pw)
         # print(self.c,self.d)
 
