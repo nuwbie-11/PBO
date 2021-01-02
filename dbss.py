@@ -485,6 +485,7 @@ class JamKerja:
                 return "Tepat Waktu"
         conn.close()
 
+
 def testing():
     pass
     # class Hari:
@@ -684,6 +685,7 @@ def get_tbnames():
         for j in i:
             print(j, end=" | ")
     print()
+
 
 def testing():
     pass
