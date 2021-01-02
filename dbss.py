@@ -468,11 +468,12 @@ class JamKerja:
             print(f"{item[0]:15s}", end="")
         print()
 
-    def match(self, jam, hari="Normal"):
+    def match(self, jam, hari):
         conn = sqlite3.connect("SIAPV3.db")
         curs = conn.cursor()
+        day = 'SPC' if hari == 'No' else 'Normal'
         query = f"SELECT JAM_MASUK FROM {self._tbname} WHERE JAM_NAME = ?"
-        curs.execute(query, (hari,))
+        curs.execute(query, (day,))
         data = curs.fetchall()
         # print(data)
         for item in data:

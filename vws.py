@@ -207,7 +207,8 @@ class AbsensiMenu(Menus):
         if select == "1":
             tanggal = dt.datetime.now().strftime("%x")
             jam = dt.datetime.now().strftime("%H.%M")
-            st = db.JamKerja(None, None, None).match(jam)
+            hari = input("Normal / No > ")
+            st = db.JamKerja(None, None, None).match(jam,hari)
             temp_new = db.Presensi(self._uid, tanggal, jam, st)
             temp_new.insert()
             self()
